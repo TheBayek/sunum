@@ -21,7 +21,7 @@ body::before {
     background-position: center;
     background-repeat: no-repeat;
     z-index: -1; /* Place l'image derrière le contenu */
-    animation: rotate-bg 15s linear infinite; /* Animation de rotation en continu */
+    animation: rotate-bg 15s linear infinite, glow-pulse3 4s infinite ease-in-out; /* Animation de rotation et de lueur */
 }
 
 @keyframes rotate-bg {
@@ -84,6 +84,18 @@ h1 {
     }
     100% {
         box-shadow: 0 0 20px white;
+    }
+}
+
+@keyframes glow-pulse3 {
+    0% {
+        filter: drop-shadow(0 0 20px orangered);
+    }
+    50% {
+        filter: drop-shadow(0 0 30px orangered);
+    }
+    100% {
+        filter: drop-shadow(0 0 20px orangered);
     }
 }
 
