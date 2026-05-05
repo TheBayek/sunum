@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
+
+body {
+    font-family: 'Orbitron', sans-serif;
+    text-align: center;
+    background-color: #000;
+    color: #fff;
+    margin: 0;
+    /* On enlève l'image du body pour la mettre dans un pseudo-élément tournant */
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: url('patapim.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -1; /* Place l'image derrière le contenu */
+    animation: rotate-bg 15s linear infinite; /* Animation de rotation en continu */
+}
+
+@keyframes rotate-bg {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+
+h1 {
+    animation: glow-pulse 4s infinite ease-in-out;
+}
+#uwuwu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.image-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.image-row img {
+    width: 250px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+    animation: glow-pulse2 4s infinite ease-in-out;
+    transition: transform 1s ease-in-out;
+}
+
+.image-row img:hover {
+    cursor: pointer;
+    transform: rotate(360deg);
+}
+
+@keyframes glow-pulse {
+    0% {
+        text-shadow: 0 0 10px #00ff00;
+    }
+    50% {
+        text-shadow: 0 0 30px #00ff00, 0 0 40px #00ff00;
+    }
+    100% {
+        text-shadow: 0 0 10px #00ff00;
+    }
+}
+@keyframes glow-pulse2 {
+    0% {
+        box-shadow: 0 0 20px white;
+    }
+    50% {
+        box-shadow: 0 0 30px white;
+    }
+    100% {
+        box-shadow: 0 0 20px white;
+    }
+}
+
+.bayek {
+    color: white;
+    animation: glow-pulse 4s infinite ease-in-out;
+}
+
+footer {
+    position: fixed;
+    bottom: 10px;
+    width: 100%;
+}
